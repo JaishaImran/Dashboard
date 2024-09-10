@@ -53,10 +53,15 @@
       <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">MAIN NAVIGATION</li>
 
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             <i class="zmdi zmdi-account-circle"></i> <span>Account</span>
           </a>
+          <div class="dropdown-menu" aria-labelledby="accountDropdown">
+            <a class="dropdown-item" href="index.html">Available Account</a>
+            <a class="dropdown-item" href="account.html">Add Account</a>
+          </div>
         </li>
 
 
@@ -71,10 +76,6 @@
             <a class="dropdown-item" href="device.html">Add Device</a>
           </div>
         </li>
-
-
-
-
       </ul>
 
     </div>
@@ -88,12 +89,6 @@
             <a class="nav-link toggle-menu" href="javascript:void();">
               <i class="icon-menu menu-icon"></i>
             </a>
-          </li>
-          <li class="nav-item">
-            <form class="search-bar">
-              <input type="text" class="form-control" placeholder="Enter keywords">
-              <a href="javascript:void();"><i class="icon-magnifier"></i></a>
-            </form>
           </li>
         </ul>
 
@@ -150,10 +145,15 @@
               <div class="card-body pt-5">
                 <img src="https://via.placeholder.com/110x110" alt="profile-image" class="profile">
                 <h5 class="card-title">John Doe</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                  vestibulum vestibulum.</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <h5 class="card-title">Motorolla G3</h5>
                 <div class="icon-block">
                   <span class="badge badge-success">Success</span>
+                </div>
+                <div class="text-center mt-3">
+                  <button class="btn btn-sm btn-danger">Stop</button>
+                  <button class="btn btn-sm btn-warning">Restart</button>
+                  <button class="btn btn-sm btn-primary">Launch</button>
                 </div>
               </div>
             </div>
@@ -164,16 +164,16 @@
               <div class="card-body">
                 <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
                   <li class="nav-item">
-                    <a href="javascript:void();" data-target="#profile" data-toggle="pill" class="nav-link active"><i
-                        class="icon-user"></i> <span class="hidden-xs">For You</span></a>
+                    <a href="javascript:void();" data-target="#profile" data-toggle="pill" class="nav-link active"><i class="icon-user"></i> <span class="hidden-xs">For You</span></a>
                   </li>
                   <li class="nav-item">
-                    <a href="javascript:void();" data-target="#messages" data-toggle="pill" class="nav-link"><i
-                        class="icon-envelope-open"></i> <span class="hidden-xs">Following</span></a>
+                    <a href="javascript:void();" data-target="#messages" data-toggle="pill" class="nav-link"><i class="icon-envelope-open"></i> <span class="hidden-xs">Following</span></a>
                   </li>
                   <li class="nav-item">
-                    <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i
-                        class="icon-note"></i> <span class="hidden-xs">Delay</span></a>
+                    <a href="javascript:void();" data-target="#edit" data-toggle="pill" class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">Delay</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void();" data-target="#log" data-toggle="pill" class="nav-link"><i class="icon-flag"></i> <span class="hidden-xs">Log</span></a>
                   </li>
                 </ul>
                 <div class="tab-content p-3">
@@ -232,7 +232,7 @@
                           <input class="form-control" type="number" placeholder="15">
                         </div>
                       </div>
-
+                
                       <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Sleep (minutes)</label>
                         <div class="col-lg-4">
@@ -257,18 +257,24 @@
                       <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label"></label>
                         <div class="col-lg-9">
-                          <button type="button" class="btn btn-danger">
-                            <i class="fa fa-stop"></i> Stop
-                          </button>
-                          <button type="button" class="btn btn-warning">
-                            <i class="fa fa-refresh"></i> Restart
-                          </button>
-                          <button type="button" class="btn btn-success">
-                            <i class="fa fa-play"></i> Launch
-                          </button>
+                          <input type="button" class="btn btn-primary next-btn" value="Next">
                         </div>
                       </div>
                     </form>
+                  </div>
+                  <div class="tab-pane" id="log">
+                    <div class="card-body">
+                      <h5 class="mt-2 mb-3"><span class="fa fa-clock-o ion-clock float-right"></span> Logs</h5>
+                      <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                          <tbody>
+                            <tr><td><strong>Account 1</strong> faced challenges.</td></tr>
+                            <tr><td><strong>Account 1</strong> sent a reply.</td></tr>
+                            <tr><td><strong>Account 1</strong> sent a reply on the following feed to <strong>user</strong></td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -285,30 +291,6 @@
   </div><!--End content-wrapper-->
   <!--Start Back To Top Button-->
 
-  <!-- Success Modal -->
-  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 style="color: black;" class="modal-title" id="successModalLabel">Success</h5>
-            </div>
-            <div class="modal-body">
-                <p style="color: black;">The process was successfully launched!</p>
-                <div id="logDetails" style="display: none;">
-                    <h6 style="color: black;">Account Logs:</h6>
-                    <ul>
-                        <li style="color: black;">Log Entry 1: User logged in at 2024-09-01 12:00:00</li>
-                        <li style="color: black;">Log Entry 2: User updated profile at 2024-09-01 12:15:00</li>
-                        <li style="color: black;">Log Entry 3: User logged out at 2024-09-01 12:30:00</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="viewLogBtn">View Detailed Log</button>
-            </div>
-        </div>
-    </div>
-  </div>
   <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
   <!--End Back To Top Button-->
 
@@ -377,32 +359,8 @@
   <script src="assets/js/app-script.js"></script>
 
   <script>
-    document.getElementById('viewLogBtn').addEventListener('click', function() {
-        var logDetails = document.getElementById('logDetails');
-        if (logDetails.style.display === 'none') {
-            logDetails.style.display = 'block';
-            this.textContent = 'Hide Detailed Log';
-        } else {
-            logDetails.style.display = 'none';
-            this.textContent = 'View Detailed Log';
-        }
-    });
-    </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const launchButton = document.querySelector('button.btn-success');
-      const viewLogBtn = document.getElementById('viewLogBtn');
-      
-      launchButton.addEventListener('click', () => {
-        // Show the success modal
-        $('#successModal').modal('show');
-      });
-      
-      viewLogBtn.addEventListener('click', () => {
-        // Logic to view logs (e.g., open a new page or show a log section)
-        alert('Viewing logs...');
-      });
+    document.getElementById('saveButton').addEventListener('click', function() {
+        $('#congratsModal').modal('show');
     });
   </script>
 
@@ -416,17 +374,13 @@
                 const nextTab = activeTab.nextElementSibling;
 
                 if (nextTab && nextTab.classList.contains('tab-pane')) {
-                    // Remove active class from the current tab pane
                     activeTab.classList.remove('active');
                     
-                    // Remove active class from the current tab link
                     const currentTabLink = document.querySelector('.nav-link.active');
                     currentTabLink.classList.remove('active');
 
-                    // Add active class to the next tab pane
                     nextTab.classList.add('active');
                     
-                    // Find the corresponding tab link and add the active class
                     const nextTabLink = document.querySelector(`a[data-target="#${nextTab.id}"]`);
                     if (nextTabLink) {
                         nextTabLink.classList.add('active');

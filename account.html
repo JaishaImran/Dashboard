@@ -46,15 +46,15 @@
     <li class="sidebar-header">MAIN NAVIGATION</li>
 
     <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="zmdi zmdi-account-circle"></i> <span>Account</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="accountDropdown">
-            <a class="dropdown-item" href="index.html">Available Account</a>
-            <a class="dropdown-item" href="account.html">Add Account</a>
-          </div>
-        </li>
+      <a href="#" class="nav-link dropdown-toggle" id="accountDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i class="zmdi zmdi-account-circle"></i> <span>Account</span>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="accountDropdown">
+        <a class="dropdown-item" href="index.html">Available Account</a>
+        <a class="dropdown-item" href="account.html">Add Account</a>
+      </div>
+    </li>
 
      
 
@@ -85,6 +85,7 @@
        <i class="icon-menu menu-icon"></i>
      </a>
     </li>
+    
   </ul>
      
   <ul class="navbar-nav align-items-center right-nav-link">
@@ -131,17 +132,21 @@
       <div class="col-lg-6">
         <div class="card">
            <div class="card-body">
-           <div class="card-title">Add Device</div>
+           <div class="card-title">Add Account</div>
            <hr>
             <form>
            <div class="form-group">
-            <label for="input-6">Device Name</label>
-            <input type="text" class="form-control form-control-rounded" id="input-6" placeholder="Enter Your Device Name">
+            <label for="input-6">Username</label>
+            <input type="text" class="form-control form-control-rounded" id="input-6" placeholder="Enter Your Username">
            </div>
            <div class="form-group">
-            <label for="input-7">Serial Number</label>
-            <input type="text" class="form-control form-control-rounded" id="input-7" placeholder="Enter Your Serial Number">
-           </div>
+            <label for="input-7">Device</label>
+                <select style="padding: 5%;" class="form-control form-control-rounded" id="input-7" multiple>
+                    <option style="background-color: transparent;" value="device1">Device 1</option>
+                    <option style="background-color: transparent;" value="device2">Device 2</option>
+                    <option style="background-color: transparent;" value="device3">Device 3</option>
+                </select>
+            </div>
            <div class="form-group">
             <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-link"></i> Connect</button>
           </div>
